@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  q-text: MyText
+  a-text: MyText
+  address: MyString
+  comprehension: false
+  user: one
+
+two:
+  title: MyString
+  q-text: MyText
+  a-text: MyText
+  address: MyString
+  comprehension: false
+  user: two
