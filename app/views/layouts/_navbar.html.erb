@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
             <% if logged_in? %>
-              <li class="nav-item"><%= link_to 'トップページ', users_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'トップページ', user_path(current_user), class: 'nav-link' %></li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">QAM広場</a>
                 <ul class="dropdown-menu dropdown-menu-right">
@@ -19,9 +19,9 @@
                   <li class="dropdown-item">QAM広場(うーん)</li>
                   <li class="dropdown-item">QAM広場(さっぱり)</li>
                 </ul>
-                <li class="nav-item"><%= link_to '新規投稿ページ', "#", class: 'nav-link' %></li>
+                <li class="nav-item"><%= link_to '新規投稿ページ', memoposts_path, class: 'nav-link' %></li>
                 <li class="nav-item"><%= link_to '友達リスト', "#", class: 'nav-link' %></li>
-                <li class="nav-item"><%= link_to 'ログアウト', logout_path, class: 'nav-link' %></li>
+                <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
               </li>
             <% else %>
               <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
