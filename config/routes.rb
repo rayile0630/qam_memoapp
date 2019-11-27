@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/destroy'
+  get 'favorites/create'
+  get 'favorites/destroy'
   get 'relationships/create'
   get 'relationships/destroy'
   root to: 'toppages#index'
@@ -17,8 +21,11 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likes
     end
   end
-  resources :posts, only: [:show, :new, :create, :destroy]
-  resources :relationships, only: [:create, :destroy]
+  resources :posts, only: [:index, :show, :new, :create, :destroy]
+  resources :relationships, only: [:index, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
+  resources :comments, only: [:index, :create, :destroy]
 end

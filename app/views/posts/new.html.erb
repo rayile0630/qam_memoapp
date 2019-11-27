@@ -9,6 +9,8 @@
           <img class="rounded img-fluid" src="<%= gravatar_url(current_user, { size: 500 }) %>" alt="">
         </div>
       </div>
+      <h2>自己紹介</h2>
+      <p><%= current_user.introduction %></p>
     </aside>
     <div class="col-sm-6">
       <h2>新規投稿</h2>

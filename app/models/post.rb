@@ -7,5 +7,5 @@ class Post < ApplicationRecord
   validates :address, presence: true, length: { maximum: 255 }
   #カテゴリはどう入れるのだろうか。
   
-  
+  has_many :coomments, dependent: :destroy
 end

@@ -1,0 +1,21 @@
+<ul class="list-unstyled">
+  <% comments.each do |comment| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+        </div>
+        <div>
+          <p class="mb-0"><%= comment.content %></p>
+        </div>  
+        <div>
+          <% if current_user == post.user %>
+            <% link_to "DELETE", post_comment_path(post_id: @post, id: comment.id), method: :delete %>
+            <% end %>
+            <%= render 'favorites/like_button', post: post %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
