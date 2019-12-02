@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :qmemo
       t.text :amemo
       t.string :address
-      t.boolean :comprehension
+      t.integer :comprehension
       t.references :user, foreign_key: true
 
       t.timestamps
