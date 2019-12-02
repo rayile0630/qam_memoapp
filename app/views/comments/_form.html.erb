@@ -1,0 +1,8 @@
+<%= form_with(model: @comment, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :user_id %>
+    <%= hidden_field_tag :post_id, @post.id %>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+    <%= f.submit "コメントする", class: "btn btn-primary" %>
+<% end %>

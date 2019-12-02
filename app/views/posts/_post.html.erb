@@ -1,0 +1,39 @@
+<ul class="list-unstyled">
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(@post.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to @post.user.name, user_path(@post.user) %> <span class="text-muted">posted at <%= @post.created_at %></span>
+        </div>
+        <table class="table table-bordered">
+          <tr>
+            <th>タイトル</th>
+            <td><%= @post.title %></td>
+          </tr>
+          <tr>
+            <th>Q__</th>
+            <td><%= @post.qmemo.gsub(/\r\n|\r|\n/, "<br>").html_safe %></td>
+          </tr>
+          <tr>
+            <th>A__</th>
+            <td><%= @post.amemo.gsub(/\r\n|\r|\n/, "<br>").html_safe %></td>
+          </tr>
+          <tr>
+            <th>URL</th>
+            <td><%= @post.address %></td>
+          </tr>
+          <tr>
+            <th>理解度</th>
+            <td><%= @post.comprehension %></td>
+          </tr>
+        </table>
+        <div>
+          <% if current_user == @post.user %>
+            <%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+            <%= render 'favorites/like_button', post: @post %>
+            <%= link_to 'コメント', new_comment_path(post_id: @post.id), class: 'btn btn-dark btn-sm'%>
+        </div>
+      </div>
+    </li>
+</ul>

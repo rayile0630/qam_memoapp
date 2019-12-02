@@ -2,8 +2,7 @@ class RelationshipsController < ApplicationController
   before_action :require_user_logged_in
   
   def index
-   @user = User.find(params[:id])
-   @followings = @user.followings
+   
   end
   
   def create

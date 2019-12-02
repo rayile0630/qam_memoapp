@@ -7,8 +7,8 @@ class PostsController < ApplicationController
   end
   
   def show
-     @post = Post.find(params[:id])
-     @comment = @post.comments.build
+    @post = Post.find(params[:id])
+    @comments = @post.comments
   end
   
   def new
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :qmemo, :amemo, :address, :comprehension)
+    params.require(:post).permit(:title, :qmemo, :amemo, :address, :comprehension, :content)
   end
 
   def correct_user

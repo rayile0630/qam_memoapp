@@ -20,7 +20,7 @@
                   <li class="dropdown-item">QAM広場(さっぱり)</li>
                 </ul>
                 <li class="nav-item"><%= link_to '新規投稿ページ', memoposts_path, class: 'nav-link' %></li>
-                <li class="nav-item"><%= link_to '友達リスト', relationships_path, class: 'nav-link' %></li>
+                <li class="nav-item"><%= link_to '友達リスト', friendlists_user_path(current_user), class: 'nav-link' %></li>
                 <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
               </li>
             <% else %>

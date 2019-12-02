@@ -22,10 +22,11 @@ Rails.application.routes.draw do
       get :followings
       get :followers
       get :likes
+      get :friendlists
     end
   end
   resources :posts, only: [:index, :show, :new, :create, :destroy]
-  resources :relationships, only: [:index, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
-  resources :comments, only: [:index, :create, :destroy]
+  resources :comments, only: [:index, :show, :new, :create, :destroy]
 end

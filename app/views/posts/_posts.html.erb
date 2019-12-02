@@ -33,6 +33,7 @@
             <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <% end %>
             <%= render 'favorites/like_button', post: post %>
+            <%= link_to 'コメント', new_comment_path(post_id: post.id), class: 'btn btn-dark btn-sm'%>
         </div>
       </div>
     </li>
