@@ -6,9 +6,9 @@
     <title>QAM</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-
+    
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -25,5 +25,10 @@
 
       <%= yield %>
     </div>
+    <footer>
+      <div id="footer_navi">
+      </div>
+      <small>&copy; 2019 QAM</small>
+    </footer>
   </body>
 </html>

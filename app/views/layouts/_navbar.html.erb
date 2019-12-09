@@ -1,6 +1,6 @@
 <header class="mb-4">
   <div id="header-logo">
-    <p>中央にlogoが入ります</p>
+    <h1><%= image_tag 'qamlogo.png', width: "100px", height: "80px" %></h1>
   </div>
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand" href="/">QAM</a>
@@ -12,17 +12,18 @@
             <ul class="navbar-nav">
             <% if logged_in? %>
               <li class="nav-item"><%= link_to 'トップページ', user_path(current_user), class: 'nav-link' %></li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">QAM広場</a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="dropdown-item">QAM広場(理解)</li>
-                  <li class="dropdown-item">QAM広場(うーん)</li>
-                  <li class="dropdown-item">QAM広場(さっぱり)</li>
-                </ul>
-                <li class="nav-item"><%= link_to '新規投稿ページ', memoposts_path, class: 'nav-link' %></li>
-                <li class="nav-item"><%= link_to '友達リスト', friendlists_user_path(current_user), class: 'nav-link' %></li>
-                <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
-              </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">QAM広場</a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="dropdown-item"><%= link_to 'QAM広場(理解)', qam_square_understandings_posts_path %></li>
+                    <li class="dropdown-item"><%= link_to 'QAM広場(うーん)', qam_square_subtles_posts_path %></li>
+                    <li class="dropdown-item"><%= link_to 'QAM広場(さっぱり)', qam_square_donotknows_posts_path %></li>
+                  </ul>
+                  <li class="nav-item"><%= link_to '新規投稿ページ', memoposts_path, class: 'nav-link' %></li>
+                  <li class="nav-item"><%= link_to '友達リスト', friendlists_user_path(current_user), class: 'nav-link' %></li>
+                  <li class="nav-item"><%= render 'posts/search', class: 'nav-link' %></li>
+                  <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
+                </li>
             <% else %>
               <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>

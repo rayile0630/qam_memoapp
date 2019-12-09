@@ -25,7 +25,20 @@ Rails.application.routes.draw do
       get :friendlists
     end
   end
-  resources :posts, only: [:index, :show, :new, :create, :destroy]
+  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      collection do
+      get :search
+      get :understandings
+      get :subtles
+      get :donotknows
+      get :qam_square_understandings
+      get :qam_square_subtles
+      get :qam_square_donotknows
+      get :my_index
+      get :news
+      get :rankings
+    end
+  end
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :comments, only: [:index, :show, :new, :create, :destroy]

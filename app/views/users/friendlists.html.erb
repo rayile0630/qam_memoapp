@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-sm-4">
+  <aside class="col-sm-3">
     <div class="card">
       <div class="card-header">
         <h3 class="card-title"><%= @user.name %></h3>
@@ -9,6 +9,12 @@
       </div>
     </div>
     <%= render 'relationships/follow_button', user: @user %>
+    <h2>自己紹介</h2>
+    <p><%= current_user.introduction %></p>
+    <p>投稿数       :<%=@count_posts %></p>
+    <p>いいね数     :<%=@count_favposts %></p>
+    <p>フォロー数   :<%= @count_followings %></p>
+    <p>フォロワー数 :<%= @count_followers %></p>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">

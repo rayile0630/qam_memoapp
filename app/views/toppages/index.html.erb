@@ -2,26 +2,27 @@
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
 <% else %>
 <div class="center jumbotron">
-  <div class="text-center">
+  <div class="visual-qam">
     <h1>QAMのわかりやすい画像が入ります。</h1>
     <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-lg btn-primary' %>
   </div>
 </div>
 
 <div id="qam-description">
-      <h2>QAM(クエム)とは・・・？</h2>
-      <section>
-          <p>Question Answer Memoの略です。</p>
-          <p>わからない事(Question)　分かった事(Answer)<br>として投稿形式で簡単にメモが出来ます。</p>
+      <section class="qam-description-item">
+      <h2><span class="q"><i class="fab fa-quora"></i></span><span class="a"><i class="fab fa-accusoft"></i></span><span class="m"><i class="fab fa-medium-m"></i></span>(クエム)とは・・・？</h2>
+      </section>
+      <section class="qam-description-item1">
+          <p><span class="q1">Question</span><span class="a1">Answer</span><span class="m1">Memo</span>の略です。</p>
+          <p>わからない事(<span class="q1">Question</span>)　分かった事(<span class="a1">Answer</span>)<br>として投稿形式で簡単にメモが出来ます。</p>
           <p>画像が入ります</p>
       </section>
-      <section>
+      <section class="qam-description-item2">
           <h2>メモを共有する</h2>
           <p>わからない基準や視点は人それぞれ。<br>中には自分と同じ疑問を持ち、自分にとってわかりやすい<br>覚え方をしている人がいるかも知れません。</p>
           <p>逆に自分のメモがわかりやすいと評価を受けるかも<br>知れません。同じ目線や感性を持った人と友達になり勉強の効率化を図りましょう!</p>
-          <p>新規登録のボタンが入ります</p>
       </section>
-      <section>
+      <section class="qam-description-item3">
           <h2>理解度別に保存が出来る</h2>
           <ul>
               <li>メモの中には、理解しているけど残しておきたいもの。</li>
@@ -30,7 +31,9 @@
           </ul>
           <p>人それぞれメモの中にも残す理由はあると思います・・・</p>
           <p>(理解) (うーん) (さっぱり)</p>
-          <h3>メモをする際に3つの理解度の中から選択</h3>
+          
+        <section  class="qam-description-item4">
+          <h2>メモをする際に3つの理解度の中から選択</h2>
           <ul>
               <li>読み返しの効率化。メモをひたすらしてると後で読み返<br>
               す時に苦労するものです。手軽に分けられるメモは重宝します。</li>
@@ -46,7 +49,8 @@
               理解してると分かってる方に直接聞く事が出来ます。</li>
           </ul>
           <p>効率的な勉強をしてみましょう！</p>
-          <p>新規登録ボタンが後で入ります</p>
+        </section>  
+          <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-lg btn-primary' %>
       </section>
   </div>
 <% end %>  

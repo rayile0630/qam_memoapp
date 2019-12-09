@@ -1,0 +1,77 @@
+<div class="row">
+    <aside class="col-sm-3">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><%= current_user.name %></h3>
+        </div>
+        <div class="card-body">
+          <img class="rounded img-fluid" src="<%= gravatar_url(current_user, { size: 500 }) %>" alt="">
+        </div>
+      </div>
+      <h2>自己紹介</h2>
+      <p><%= current_user.introduction %></p>
+      <p>投稿数       :<%= @count_posts %></p>
+      <p>いいね数     :<%= @count_favposts %></p>
+      <p>フォロー数   :<%= @count_followings %></p>
+      <p>フォロワー数 :<%= @count_followers %></p>
+    </aside>
+    <ul class="list-unstyled col-sm-6">
+      <h2>QAM広場(うーん)</h2>
+      <% @posts.each do |post| %>
+      <li class="media mb-3">
+        <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+        <%= render 'relationships/follow_post_button', post: post %>
+        <div class="media-body">
+            <table class="table table-bordered">
+          <tr>
+            <th>タイトル</th>
+            <td><%= post.title %></td>
+          </tr>
+          <tr>
+            <th>Q__</th>
+            <td><%= post.qmemo.gsub(/\r\n|\r|\n/, "<br>").html_safe %></td>
+          </tr>
+          <tr>
+            <th>A__</th>
+            <td><%= post.amemo.gsub(/\r\n|\r|\n/, "<br>").html_safe %></td>
+          </tr>
+          <tr>
+            <th>URL</th>
+            <td><%= post.address %></td>
+          </tr>
+          <tr>
+            <th>理解度</th>
+            <td><%= post.comprehension %></td>
+          </tr>
+        </table>
+         <div>
+          <% if current_user == post.user %>
+            <%= link_to '編集', edit_post_path(post.id), class: 'btn btn-info btn-sm'%>
+            <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+            <%= render 'favorites/like_button', post: post %>
+            <%= link_to 'コメント', new_comment_path(post_id: post.id), class: 'btn btn-dark btn-sm'%>
+        </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <div class="col-sm-3">
+    <ul>
+    <h2>投稿情報</h2>
+    <% @posts.each do |post| %>
+      <li class="tabel table-bordered">
+        <tr>
+          <td><span class="badge badge-danger">新着</span><%= link_to post.created_at.to_s + 'タイトル：' + post.title, post %></td>
+        </tr>      
+      </li>
+    <% end %>
+      </table>
+      <div class="table table-bordered">
+            <p>全体いいねランキング</p>
+            <tr>
+              <td><%= render 'posts/rankings', post: post %></td>
+            </tr>
+          </div>  
+    </ul>  
+</div>    

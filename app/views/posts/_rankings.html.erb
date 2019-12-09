@@ -1,0 +1,5 @@
+<ul>
+<% @all_ranks.each.with_index(1) do |post, i| %>
+<li>第<%= i %>位<a href ="<%= post_path(post) %>"><%= post.title %></a></li>
+<% end %>
+</ul>

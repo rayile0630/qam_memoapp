@@ -65,3 +65,4 @@ gem 'pry-byebug', group: :development
 gem 'pry-rails'
 gem 'pry-doc'
 gem 'pry-stack_explorer'
+gem 'font-awesome-rails'

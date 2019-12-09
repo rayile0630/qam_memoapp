@@ -1,0 +1,29 @@
+<h1>id: <%= @post.id %> の投稿編集ページ</h1>
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, class: 'form-control', rows: 5 %>
+  </div>  
+  <div class="form-group">
+    <%= f.text_area :qmemo, class: 'form-control', rows: 5 %>
+    <%= f.text_area :amemo, class: 'form-control', rows: 5 %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :address, class: 'form-control', rows: 5 %>
+  </div>  
+  <div class="radio-inline">
+    <%= f.radio_button :comprehension, :理解, checked: "checked" %>
+    <%= f.label :理解, class: "comprehension" %>
+  </div>  
+  <div class="radio-inline">
+    <%= f.radio_button :comprehension, :うーん %>
+    <%= f.label :うーん, class: "comprehension" %>
+  </div>
+  <div class="radio-inline">
+    <%= f.radio_button :comprehension, :さっぱり %>
+    <%= f.label :さっぱり, class: "comprehension" %>
+  </div>
+    <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= link_to '一覧に戻る', posts_path %>

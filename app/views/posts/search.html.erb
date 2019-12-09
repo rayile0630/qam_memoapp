@@ -1,0 +1,15 @@
+<ul><% @posts.each do |post| %>
+  <li class="tabel table-bordered">
+      <tr>
+          <th>タイトル:</th>
+          <td><%= link_to post.title, post %></td>
+      </tr>
+      <p></p>
+      <tr>
+        <th>投稿日:</th>
+          <td><%= post.created_at %></td>
+      </tr>
+  </li>
+  <% end %>
+  </table>
+</ul>

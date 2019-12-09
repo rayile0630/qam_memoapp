@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-sm-4">
+    <aside class="col-sm-3">
       <div class="card">
         <div class="card-header">
           <h3 class="card-title"><%= current_user.name %></h3>
@@ -11,6 +11,10 @@
       </div>
       <h2>自己紹介</h2>
       <p><%= current_user.introduction %></p>
+      <p>投稿数       :<%=@count_posts %></p>
+      <p>いいね数     :<%=@count_favposts %></p>
+      <p>フォロー数   :<%= @count_followings %></p>
+      <p>フォロワー数 :<%= @count_followers %></p>
     </aside>
     <div class="col-sm-6">
       <h2>新規投稿</h2>
@@ -25,12 +29,23 @@
           <div class="form-group">
             <%= f.text_field :address, class: 'form-control', rows: 5 %>
           </div>  
-            <!--理解度のチェックボックスが入るenum実装する-->
+          <div class="radio-inline">
+            <%= f.radio_button :comprehension, :理解, checked: "checked" %>
+            <%= f.label :理解, class: "comprehension" %>
+          </div>  
+          <div class="radio-inline">
+            <%= f.radio_button :comprehension, :うーん %>
+              <%= f.label :うーん, class: "comprehension" %>
+          </div>
+          <div class="radio-inline">
+            <%= f.radio_button :comprehension, :さっぱり %>
+              <%= f.label :さっぱり, class: "comprehension" %>
+          </div>
             <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
         <% end %>
     </div>
       <div class="col-sm-6">
-        <!--後で、一覧入れるか考える-->
+        
       </div>
     </div>
   <% else %>

@@ -11,11 +11,10 @@
       </div>
       <h2>自己紹介</h2>
     <p><%= current_user.introduction %></p>
-        <p>投稿数       :<%= @count_posts %></p>
-        <p>いいね数     :<%= @count_favposts %></p>
-        <p>フォロー数   :<%= @count_followings %></p>
-        <p>フォロワー数 :<%= @count_followers %></p>
-        
+    <p>投稿数       :<%= @count_posts %></p>
+    <p>いいね数     :<%= @count_favposts %></p>
+    <p>フォロー数   :<%= @count_followings %></p>
+    <p>フォロワー数 :<%= @count_followers %></p>
     </aside>
 　　<div class="col-sm-6">
 　　<%= render 'posts/posts', posts: @posts %>

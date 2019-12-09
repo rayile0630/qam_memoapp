@@ -1,2 +1,19 @@
 <%= render 'comments/form'%>
-<%= link_to 'コメント一覧', post_path(@post) %>
+<p></p>
+<ul class="list-unstyled">
+  <% @comments.each do |comment| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(current_user, { size: 50 }) %>" alt="">
+        <div class="media-body">
+          <div>
+            <%= link_to comment.user.name, user_path(comment.user) %> <span class="text-muted">posted at <%= comment.created_at %></span>
+          </div>
+          <table class="table table-bordered">
+            <tr>
+              <td><%= comment.content %></td>
+            </tr>
+          </table>
+        </div>    
+    </li>
+  <% end %>  
+</ul>

@@ -1,3 +1,96 @@
-// Place all the styles related to the toppages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "UTF-8";
+
+
+/* チャプター全体:全体の設定*/
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* チャプター：マージン */
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.8;
+}
+
+header {
+   width: 1000px;
+   margin: 0 auto;
+   background-image: url('headerimage.png');
+   background-size: 700px 300px;
+}
+
+#header-logo {
+    text-align: center;
+}
+
+.collapse ul li a {
+ 
+}
+
+.collapse {
+    
+}
+
+#qam-description {
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+/*説明のh2のタイトルの文字色の設定と各エリア設定*/
+
+.qam-description-item2 h2 {
+    color: #0000ff;
+    margin-top: 50px;
+}
+
+.qam-description-item3 h2 {
+    color: #ff0000;
+    margin-top: 50px;
+}
+
+.qam-description-item4 h2 {
+    color: #008000;
+    margin-top: 50px;
+}
+
+/*h2のクエスションの文字色変更(青、赤、緑)*/
+#qam-description h2 .q {
+    color: #0000ff;
+}
+
+#qam-description h2 .a {
+    color: #ff0000;
+}
+
+#qam-description h2 .m {
+    color: #008000;
+}
+
+.qam-description-item1 .q1{
+    color: #0000ff;
+}
+
+.qam-description-item1 .a1{
+    color: #ff0000;
+}
+
+.qam-description-item1 .m1{
+    color: #008000;
+}
+
+footer {
+    width: 1000px;
+    margin: 0 auto;
+    height: 150px;
+    background-image: url('headerimage.png');
+    color: white;
+    margin-top: 100px;
+    background-size: 1000px 400px;
+}

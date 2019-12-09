@@ -1,3 +1,19 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "UTF-8";
+
+
+/* チャプター全体:全体の設定*/
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* チャプター：マージン */
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+}
+
+.row {
+    width: 1000px;
+    margin: 0 auto;
+}
