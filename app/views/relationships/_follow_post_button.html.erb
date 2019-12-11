@@ -1,5 +1,5 @@
 <% unless current_user == post.user %>
-  <% if current_user.following?(post) %>
+  <% if current_user.following?(post.user) %>
     <%= form_with(model: current_user.relationships.find_by(follow_id: post.user.id), local: true, method: :delete) do |f| %>
       <%= hidden_field_tag :follow_id, post.user.id %>
       <%= f.submit 'アンフォロー', class: 'btn  btn_follow btn-danger btn-xs' %>
