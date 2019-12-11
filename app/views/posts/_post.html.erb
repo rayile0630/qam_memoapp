@@ -6,7 +6,7 @@
       </div>
       <div class="media-body">
         <div>
-          <%= link_to @post.user.name, user_path(@post.user) %> <span class="text-muted">posted at <%= @post.created_at.slice(0..18) %></span>
+          <%= link_to @post.user.name, user_path(@post.user) %> <span class="text-muted">posted at <%= @post.created_at %></span>
         </div>
         <table class="table table-bordered table_border_radius">
           <tr>
