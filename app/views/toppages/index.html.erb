@@ -1,11 +1,11 @@
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
 <% else %>
-<div class="center jumbotron">
-  <div class="visual-qam">
-    <h1>QAMのわかりやすい画像が入ります。</h1>
+<div class="visual-qam">
+  <%= image_tag 'watch-1.jpg', width: "1000px", height: "500px" %>
+  <div class="btn-signup">
     <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-lg btn-primary' %>
-  </div>
+  </div  
 </div>
 
 <div id="qam-description">

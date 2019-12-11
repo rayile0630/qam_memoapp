@@ -29,11 +29,20 @@ header {
     text-align: center;
 }
 
-.collapse ul li a {
- 
+.collapse {
 }
 
-.collapse {
+.visual-qam {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.visual-qam .btn-signup {
+    position: absolute;
+    top: 300px;
+    left: 400px;
+    
     
 }
 
@@ -85,11 +94,14 @@ header {
     color: #008000;
 }
 
+.qam-description-item3 ul {
+    list-style: none;
+}
 footer {
     width: 1000px;
     margin: 0 auto;
     height: 150px;
-    background-image: url('headerimage.png');
+    background-color: #556b2f;
     color: white;
     margin-top: 100px;
     background-size: 1000px 400px;

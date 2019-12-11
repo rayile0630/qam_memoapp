@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row top-row">
   <aside class="col-sm-3">
     <div class="card">
       <div class="card-header">
@@ -9,20 +9,22 @@
       </div>
     </div>
     <%= render 'relationships/follow_button', user: @user %>
-    <h2>自己紹介</h2>
-    <p><%= current_user.introduction %></p>
-    <p>投稿数       :<%= @count_posts %></p>
-    <p>いいね数     :<%= @count_favposts %></p>
-    <p>フォロー数   :<%= @count_followings %></p>
-    <p>フォロワー数 :<%= @count_followers %></p>
+    <div class="profile_border">
+      <h2>自己紹介  <%= link_to '変更', edit_user_path(current_user), class: "btn btn-warning btn-sm d-inline" %></h2>
+      <p><%= current_user.introduction %></p>
+      <p>投稿数：<span class="badge badge-primary"><%= @count_posts %></span></p>
+      <p>いいね数：<span class="badge badge-warning"><%= @count_favposts %></span></p>
+      <p>フォロー数：<span class="badge badge-success"><%= @count_followings %></span></p>
+      <p>フォロワー数：<span class="badge badge-danger"><%= @count_followers %></span></p>
+    </div>  
   </aside>
-  <div class="col-sm-5">
+  <div class="col-sm-6">
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item"><a href="<%= posts_path %>" class="nav-link <%= 'active' if current_page?(posts_path) %>">投稿一覧  <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
       <li class="nav-item"><a href="<%= my_index_posts_path %>" class="nav-link">自分の投稿一覧</a></li>
     </ul>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3 post_information">
     <%= render 'posts/news', post: @posts %>
   </div>
 </div>

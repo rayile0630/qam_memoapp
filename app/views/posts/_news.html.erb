@@ -1,11 +1,7 @@
-<ul>
-    <h2>投稿情報</h2>
+<ul class="qam-news">
+  <h2>投稿情報</h2>
     <% @posts.each do |post| %>
-      <li class="tabel table-bordered">
-        <tr>
-          <td><span class="badge badge-danger">新着</span><%= link_to post.created_at.to_s + 'タイトル：' + post.title, post %></td>
-        </tr>      
-      </li>
+        <li><span class="badge badge-danger">新着</span><%= link_to raw(post.created_at.to_s.slice(0..18) + '<br>' + 'タイトル' + post.title), post %></li>
     <% end %>
   </table>
-</ul>  
+</ul> 

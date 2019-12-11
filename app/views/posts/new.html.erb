@@ -9,25 +9,27 @@
           <img class="rounded img-fluid" src="<%= gravatar_url(current_user, { size: 500 }) %>" alt="">
         </div>
       </div>
+      <div class="profile_border">
       <h2>自己紹介</h2>
-      <p><%= current_user.introduction %></p>
-      <p>投稿数       :<%=@count_posts %></p>
-      <p>いいね数     :<%=@count_favposts %></p>
-      <p>フォロー数   :<%= @count_followings %></p>
-      <p>フォロワー数 :<%= @count_followers %></p>
+        <p><%= current_user.introduction %></p>
+        <p>投稿数：<span class="badge badge-primary"><%= @count_posts %></span></p>
+        <p>いいね数：<span class="badge badge-warning"><%= @count_favposts %></span></p>
+        <p>フォロー数：<span class="badge badge-success"><%= @count_followings %></span></p>
+        <p>フォロワー数：<span class="badge badge-danger"><%= @count_followers %></span></p>
+      </div>
     </aside>
     <div class="col-sm-6">
       <h2>新規投稿</h2>
         <%= form_with(model: @post, local: true) do |f| %>
           <div class="form-group">
-            <%= f.text_field :title, class: 'form-control', rows: 5 %>
+            <%= f.text_field :title, class: 'form-control', rows: 5, placeholder: "タイトル" %>
           </div>  
           <div class="form-group">
-            <%= f.text_area :qmemo, class: 'form-control', rows: 5 %>
-            <%= f.text_area :amemo, class: 'form-control', rows: 5 %>
+            <%= f.text_area :qmemo, class: 'form-control', rows: 5, placeholder: "QuesionMemo" %>
+            <%= f.text_area :amemo, class: 'form-control', rows: 5, placeholder: "AnswerMemo" %>
           </div>
           <div class="form-group">
-            <%= f.text_field :address, class: 'form-control', rows: 5 %>
+            <%= f.text_field :address, class: 'form-control', rows: 5, placeholder: "URL" %>
           </div>  
           <div class="radio-inline">
             <%= f.radio_button :comprehension, :理解, checked: "checked" %>

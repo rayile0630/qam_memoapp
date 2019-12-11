@@ -1,11 +1,14 @@
 <ul class="list-unstyled">
     <li class="media mb-3">
-      <img class="mr-2 rounded" src="<%= gravatar_url(@post.user, { size: 50 }) %>" alt="">
+      <div class="follow_haiti">
+      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+        <%= render 'relationships/follow_post_button', post: post %>
+      </div>
       <div class="media-body">
         <div>
           <%= link_to @post.user.name, user_path(@post.user) %> <span class="text-muted">posted at <%= @post.created_at %></span>
         </div>
-        <table class="table table-bordered">
+        <table class="table table-bordered table_border_radius">
           <tr>
             <th>タイトル</th>
             <td><%= @post.title %></td>
@@ -37,4 +40,5 @@
         </div>
       </div>
     </li>
+    <%= paginate @posts %>
 </ul>

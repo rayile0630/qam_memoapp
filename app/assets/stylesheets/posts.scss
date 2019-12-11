@@ -1,3 +1,117 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "UTF-8";
+
+
+/* チャプター全体:全体の設定*/
+body {
+    background-image: url('qamimage1.png');
+    margin: 0;
+    padding: 0;
+}
+
+
+.table_border_radius {
+  border: 6px solid #00ced1;
+  border-radius: 10px;
+  border-spacing: 0;
+  background-color:#f0fff0 !important;
+  background-image: radial-gradient(white 15%, transparent 16%),
+  radial-gradient(white 15%, transparent 16%);
+  background-size:30px 30px;
+  background-position: 0 0, 15px 15px;
+  border-collapse: separate;
+  
+}
+.table_border_radius tr td {
+  border: 1px solid #00ced1;	
+}
+.table_border_radius tr td:first-child {
+  border-left: none;
+}
+.table_border_radius tr td:last-child {
+  border-right: none;
+}
+.table_border_radius tr:first-child td {
+  border-top: none;
+}
+.table_border_radius tr:last-child td {
+  border-bottom: none;
+}
+
+.table_border_radius tr th {
+  border: 1px solid #00ced1;	
+}
+
+.table_border_radius tr th:first-child {
+  border-left: none;
+}
+.table_border_radius tr th:last-child {
+  border-right: none;
+}
+.table_border_radius tr:first-child th {
+  border-top: none;
+}
+.table_border_radius tr:last-child th {
+  border-bottom: none;
+}
+
+/*投稿情報の設定*/
+.post_information {
+  height: 400px;
+  text-align: center;
+  padding: 5px;
+  background-image: url('qam-image12.png');
+  background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+.post_information li{
+  width: 80%;
+  list-style: none;
+  font-size: 15px;
+  
+}
+
+/*トップのrow全体のレイアウトの設定*/
+.top-row{
+  justify-content: space-between;
+}
+
+/*投稿のアイコンとフォローボタンの位置を垂直にする*/
+.media .follow_haiti {
+  display: column;
+  width: 100px;
+}
+
+.media .follow_haiti img {
+  margin-bottom: 7px;
+}
+
+/*投稿についてるフォローボタンの設定*/
+.btn1 {
+  font-size: 0.7rem;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border-radius: 6px;
+}
+
+/*プロフィール欄の設定*/
+.profile_border {
+  margin-top: 10px;
+}
+
+span {
+  margin-right: 5px;
+}
+
+ul {
+  padding-left: 0;
+}

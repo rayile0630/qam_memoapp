@@ -8,21 +8,26 @@
           <img class="rounded img-fluid" src="<%= gravatar_url(current_user, { size: 500 }) %>" alt="">
         </div>
       </div>
-      <h2>自己紹介</h2>
-      <p><%= current_user.introduction %></p>
-      <p>投稿数       :<%= @count_posts %></p>
-      <p>いいね数     :<%= @count_favposts %></p>
-      <p>フォロー数   :<%= @count_followings %></p>
-      <p>フォロワー数 :<%= @count_followers %></p>
+      <div class="profile_border">
+        <h2>自己紹介</h2>
+        <p><%= current_user.introduction %></p>
+        <p>投稿数：<span class="badge badge-primary"><%= @count_posts %></span></p>
+        <p>いいね数：<span class="badge badge-warning"><%= @count_favposts %></span></p>
+        <p>フォロー数：<span class="badge badge-success"><%= @count_followings %></span></p>
+        <p>フォロワー数：<span class="badge badge-danger"><%= @count_followers %></span></p>
+      </div>
     </aside>
     <ul class="list-unstyled col-sm-6">
       <h2>QAM広場(うーん)</h2>
       <% @posts.each do |post| %>
       <li class="media mb-3">
-        <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
-        <%= render 'relationships/follow_post_button', post: post %>
+        <div class="follow_haiti">
+          <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+          <%= render 'relationships/follow_post_button', post: post %>
+        </div>
         <div class="media-body">
-            <table class="table table-bordered">
+          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+            <table class="table table-bordered table_border_radius">
           <tr>
             <th>タイトル</th>
             <td><%= post.title %></td>
@@ -55,6 +60,7 @@
         </div>
       </li>
       <% end %>
+      <%= paginate @posts %>
     </ul>
     <div class="col-sm-3">
     <ul>
