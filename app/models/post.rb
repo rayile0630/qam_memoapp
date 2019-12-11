@@ -21,6 +21,6 @@ class Post < ApplicationRecord
     Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
     
-  
+  has_many:favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
 end

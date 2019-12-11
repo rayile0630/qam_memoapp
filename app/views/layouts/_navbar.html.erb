@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
             <% if logged_in? %>
-              <li class="nav-item"><%= link_to 'トップページ', user_path(current_user), class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'マイページ', user_path(current_user), class: 'nav-link' %></li>
                 <li class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">QAM広場</a>
                   <ul class="dropdown-menu dropdown-menu-right">

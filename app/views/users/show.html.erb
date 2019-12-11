@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div class="row top-row">
   <aside class="col-sm-3">
     <div class="card">
@@ -10,7 +11,11 @@
     </div>
     <%= render 'relationships/follow_button', user: @user %>
     <div class="profile_border">
-      <h2>自己紹介  <%= link_to '変更', edit_user_path(current_user), class: "btn btn-warning btn-sm d-inline" %></h2>
+      <% if current_user == @user %>
+      <h2>自己紹介 <%= link_to '変更', edit_user_path(current_user), class: "btn btn-warning btn-sm d-inline" %></h2>
+      <% else %>
+      <h2>自己紹介</h2>
+      <% end %>
       <p><%= current_user.introduction %></p>
       <p>投稿数：<span class="badge badge-primary"><%= @count_posts %></span></p>
       <p>いいね数：<span class="badge badge-warning"><%= @count_favposts %></span></p>
@@ -28,3 +33,12 @@
     <%= render 'posts/news', post: @posts %>
   </div>
 </div>
+<% else %>
+    <div class="center jumbotron">
+      <div class="text-center">
+        <h1>QAM</h1>
+          <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
+      </div>
+    </div>
+  </div>    
+  <% end %>

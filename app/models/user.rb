@@ -8,12 +8,12 @@ class User < ApplicationRecord
     validates :introduction, presence: true, length: { maximum: 500 }   #改行用のformatいるかも？後で確認             
     has_secure_password
     
-    has_many :posts
+    has_many :posts, dependent: :destroy
     has_many :relationships
     has_many :followings, through: :relationships, source: :follow
     has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
     has_many :followers, through: :reverses_of_relationship, source: :user
-    has_many :favorites
+    has_many :favorites, dependent: :destroy
     has_many :favposts, through: :favorites, source: :post, dependent: :destroy
     has_many :comments, dependent: :destroy
     
