@@ -66,3 +66,7 @@ gem 'pry-rails'
 gem 'pry-doc'
 gem 'pry-stack_explorer'
 gem 'font-awesome-rails'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end

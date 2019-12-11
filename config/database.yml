@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: qam-memos_production
   username: qam-memos
   password: <%= ENV['QAM-MEMOS_DATABASE_PASSWORD'] %>
