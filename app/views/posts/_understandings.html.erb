@@ -63,15 +63,11 @@
       <%= paginate @posts %>
     </ul>
     <div class="col-sm-3">
-      <ul>
-      <h2>投稿情報</h2>
-        <% @posts.each do |post| %>
-          <li class="tabel table-bordered">
+          <ul class="tabel table-bordered">
             <tr>
-              <td><span class="badge badge-danger">新着</span><%= link_to post.created_at.to_s + 'タイトル：' + post.title, post %></td>
+              <td><%= render 'posts/news', post: @posts %></td>
             </tr>
-          </li>
-        <% end %>
+          </ul>
           </table>
           <div class="table table-bordered">
             <p>全体いいねランキング</p>

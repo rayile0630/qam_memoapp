@@ -77,16 +77,14 @@ class UsersController < ApplicationController
 end
 
   def correct_user
-    if current_user.id != params[:id]
+    @user = User.find(params[:id])
+    if current_user.id != @user.id
       redirect_to login_url
     end
   end  
-    #こんな使い方があるのですね！時間過ぎてるのにありがとうございます。はい、ありがとうございました。助かります。
-    #はい、頑張ります。#はい、色々似たような記述探して理解してみます
-# ジャストアイデアですが、、、さっき私がかいたのはこういうイメージです
+    
+# 頂いたアイディア参考↓
 # if current_user.id != params[:id]
 # redirect login_url
 # end
-# いえいえ、そろそろ失礼します！がんばってください！
-# あくまで参考ですので、きちんと理解しながら書いてくださいね！
 

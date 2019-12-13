@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def index
     @posts = Post.all.order(id: :desc).page(params[:page]).per(5)
@@ -96,7 +96,7 @@ class PostsController < ApplicationController
   end
   
   def my_index
-    @posts = current_user.posts.order(id: :desc).page(params[:page]).per(7)
+    @posts = current_user.posts.order(id: :desc).page(params[:page]).per(5)
     @user = current_user
     counts(@user)
   end

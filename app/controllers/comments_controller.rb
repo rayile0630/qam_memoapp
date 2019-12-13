@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
         redirect_back(fallback_location: comment_path(@comment.post_id))
       else
         flash.now[:danger] = 'コメントの投稿に失敗しました。'
-        render 'comments/new'
+        redirect_back(fallback_location: comment_path(@comment.post_id))
       end
     end
   
